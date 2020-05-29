@@ -1,6 +1,8 @@
 language: python
 python:
     - "3.8"
+before_install:
+    - openssl aes-256-cbc -K $encrypted_0cd18a7ea926_key -iv $encrypted_0cd18a7ea926_iv -in src/songs-522b9-a83d85fea785.json.enc -out src/songs-522b9-a83d85fea785.json -d
 install:
     - pip install -r requirements.txt
 script:
