@@ -1,10 +1,12 @@
 language: python
 python:
-    - '3.8'
+- '3.8'
+env:
+  global:
+  - secure: sUroTncBlYcfUlW8iCU4VSwtSmelHf38mOcS1kNgyough1nlNVjE3Ob4ZfCIaegiHLwnUeFjKfyX4dSuMMryJtTJc5iuF7SCx7uZSDn0ggeZJGGPO+ck7mufPnVQ1sUQQs2suh6n+7QRM1wgpGGnKY+ciNx2b9P/AJfDB7RpnsaxExI2PxIO0c0Xq0e4YfVV1jNEot3aiwokeRzmxGne0dttM+pq1Cm6aZyhCXvcDWVK+RVNulC+ror8oOdLdAKf5nWRqhaPC+76I5wYvZgWuW5BDHsh+oknR1wf6qTa2giQUU8hJlCmIr3xShqEUJ0X8JoZjhwvcOwJgBzjHO9KSSoSvnBqFg5g7qJegNQiNgcxl/ZDaJJkZQW5yD+ZvUv+10CeZh82/0GslFakyDxDa3O+iyRxWOJqA67YVuaTutN17TDhOkpT/jffDF7bLDbGuUMcEeofcU6A/MtPBFJL1kdBHNcqUXUXyyNL2ldR6hMqN+GBCj9A3MC/LnH+xndIuMwmJ8wak0sawXSpGDeLjauEkj+DYQzIjPwckrY1g7s9Y43UB7CSxXs5HYPqpWBwwIiM5ocQVjVVdk8IWg4rIGiN76dPhOFBcrqGipPtGEWd5TwByhrQuUENEZnwG7SmJgy4eNc4meFuEMm1zeJ6RJ3d/EUueA90XR42kW3mVIM=
 before_install:
-    - openssl aes-256-cbc -K $encrypted_b949fd358e1f_key -iv $encrypted_b949fd358e1f_iv
-      -in songs-522b9-a83d85fea785.json.enc -out src/songs-522b9-a83d85fea785.json -d
+- openssl aes-256-cbc -K $certificate_key -in songs-522b9-a83d85fea785.json.enc -out src/songs-522b9-a83d85fea785.json -d
 install:
-    - pip install -r requirements.txt
+- pip install -r requirements.txt
 script:
-    - pytest
+- pytest
