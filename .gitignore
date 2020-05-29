@@ -1,0 +1,12 @@
+# Python
+__pycache__/
+
+# Pytest
+.pytest_cache/
+
+# Coverage
+htmlcov/
+.coverage
+
+# Top Secret
+songs-522b9-a83d85fea785.json
