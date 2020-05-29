@@ -1,7 +1,7 @@
 from fastapi.testclient import TestClient
 
-from BE.main import app
-from BE.routers.search import search
+from src.main import app
+from src.routers.search import search
 
 client = TestClient(app)
 
