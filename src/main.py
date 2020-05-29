@@ -8,8 +8,8 @@ from google.cloud.firestore import Client
 
 import logging
 
-from BE import FIRESTORE_CERTIFICATE
-from BE.routers import search
+from src import FIRESTORE_CERTIFICATE
+from src.routers import search
 
 app = FastAPI()
 

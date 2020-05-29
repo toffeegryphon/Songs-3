@@ -1,0 +1,1 @@
+FIRESTORE_CERTIFICATE = 'src/songs-522b9-a83d85fea785.json'
