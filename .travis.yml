@@ -1,16 +1,16 @@
 language: python
 python:
-  - '3.8'
+- '3.8'
 env:
   global:
     secure: OqWCtv1MKComJT3rFSmZmfAyWdNe0x92gc/P2n0CankJkPYrhU7fbvG3Zsni6pGcTjeu2A87EquBSPw0XaWyRsibmwC1Pp/s3Nrr4wkm0mpHn8dgU+mKzMd10eZ+mH6/M+iond/aRlJiB2ujItwOe1JCiUu38l8xtouinoFHdMaw2OzpYoJG+IyItAk5ZnJzXXhwl1Kb0De6T6eTlS11pC24UA8+hv61QKu1od1M7PXFcdVyX9SEzHtnmvTOoF3DlhDnwkEDORT7UsZBMAMzGUWMXO4A21MmEtEey9Hvhd0/FMROaqhx2h1S1gsuQZiKFNXUMC2GxnqQLXCiWdm2y5WfxhwH9rInMl69DJXkI/QH6ZHUSg790WJrwaBK9OQw1O2Eye4L1W7qtmRkyOpQ9E+oN4n/Z4xcHDNafpJYisaPJmLCZ45dNcOMBG7Pjf0lQnX2WbrNd//EGySrjzIkAbWuC1jHU+nUzTB2WxV8XnF9f0u4cS5abJhgCmgco9FJshIPKmN+bs55GXoRbBOQM6vtcQ71qEHat9a9IdkXOgxma8lpntmPCqrGg5BGWGi/Lo2mpUBDWv2bcLJlnFXQ7WXoE4Mp2eXTRl9OoZKXeh2Y/m4agCEtN0T1sXCWfBi9QhnGHhTx4wWB6+dWSH0Yzt5ZYWeFfAvYFZDwF3NczEw=
 before_install:
-  - openssl aes-256-cbc -k "$certificate_key" -in certificate.json.enc -out src/songs-522b9-a83d85fea785.json
+- openssl aes-256-cbc -k "$certificate_key" -in certificate.json.enc -out src/songs-522b9-a83d85fea785.json
   -d
 install:
-  - pip install -r requirements.txt
+- pip install -r requirements.txt
 script:
-  - pytest
+- pytest
 deploy:
   provider: heroku
   app: songsbackend
