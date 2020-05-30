@@ -1,5 +1,8 @@
-# Songs-3 (BE)
+# [Songs-3](https://songsbackend.herokuapp.com/) (BE)
 Find songs by artist name. Using Python/FastAPI
+
+## API
+[Documentation](https://songsbackend.herokuapp.com/docs)
 
 ## Development
 ```
