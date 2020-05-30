@@ -5,8 +5,15 @@ env:
   global:
     secure: OqWCtv1MKComJT3rFSmZmfAyWdNe0x92gc/P2n0CankJkPYrhU7fbvG3Zsni6pGcTjeu2A87EquBSPw0XaWyRsibmwC1Pp/s3Nrr4wkm0mpHn8dgU+mKzMd10eZ+mH6/M+iond/aRlJiB2ujItwOe1JCiUu38l8xtouinoFHdMaw2OzpYoJG+IyItAk5ZnJzXXhwl1Kb0De6T6eTlS11pC24UA8+hv61QKu1od1M7PXFcdVyX9SEzHtnmvTOoF3DlhDnwkEDORT7UsZBMAMzGUWMXO4A21MmEtEey9Hvhd0/FMROaqhx2h1S1gsuQZiKFNXUMC2GxnqQLXCiWdm2y5WfxhwH9rInMl69DJXkI/QH6ZHUSg790WJrwaBK9OQw1O2Eye4L1W7qtmRkyOpQ9E+oN4n/Z4xcHDNafpJYisaPJmLCZ45dNcOMBG7Pjf0lQnX2WbrNd//EGySrjzIkAbWuC1jHU+nUzTB2WxV8XnF9f0u4cS5abJhgCmgco9FJshIPKmN+bs55GXoRbBOQM6vtcQ71qEHat9a9IdkXOgxma8lpntmPCqrGg5BGWGi/Lo2mpUBDWv2bcLJlnFXQ7WXoE4Mp2eXTRl9OoZKXeh2Y/m4agCEtN0T1sXCWfBi9QhnGHhTx4wWB6+dWSH0Yzt5ZYWeFfAvYFZDwF3NczEw=
 before_install:
-  - openssl aes-256-cbc -k "$certificate_key" -in certificate.json.enc -out src/songs-522b9-a83d85fea785.json -d
+- openssl aes-256-cbc -k "$certificate_key" -in certificate.json.enc -out src/songs-522b9-a83d85fea785.json
+  -d
 install:
-  - pip install -r requirements.txt
+- pip install -r requirements.txt
 script:
-  - pytest
+- pytest
+deploy:
+  provider: heroku
+  app: songsbackend
+  skip_cleanup: true # I think required for decrypted certificate
+  api_key:
+    secure: EDHpXe7WK+kOyh+B1a2Cprk/+5wXvWUM7NKfBEkIS+5NAxvz+zI1DzEkRgzu6W55297RDAWdUKgzB3p0z6rib3s7M7G5z5aNG/UxL9RdyZPY3ZQ5Tn6o0HfTvXgoSQU1Ijz8Rsw49RtEI74xJwK4geRuXLSt8poZJMx1gAzuBxXqypm9mzn+A5TAKdIBO3c1kcuFOKA0J46uYiwc/y0lT6SoFkeQJgRkVkf8EUvVOEKYSLkIPUomUs7DZMJWaq6epCnktGHZKKRa7NKAc2lEUtIerdOiId+uMOe+MV96AScN8yickTkKCtnEBvYwn9q6VTiLVvfgXDCLJ93WCs5yEopDyIRTdDF+wQlo56mwhVRDJDfI5KA5Jailyb+/RvaAu9rqborJ9AuW5KyRS/GNISzSGis8EwqV7U+ysX/TGfeJdbCW4eXdsAQx/L9VgvZkh5FzJO/Y62fh8qSjxFGl4nm775YB8SMblxoYQ6CgSZBCFiUsuDxI9kc4KJt5xXqmkIxfJEweMiVZhrOPfH8B6IgLGiaV7CQxzXvlCvFv4kZ2c49MhoF2N1L/XseuQ9/AfHSz3M9VXNoL8tL7euXh6HoZ788oVJonuh7jb51LXaoEae33HJ3XJEV7qbrYizznfvzvIy4rwjCAr4JI5yD103Cl9ONNkNUT8O/PcTdzPOo=
