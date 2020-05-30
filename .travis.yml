@@ -3,10 +3,10 @@ python:
 - '3.8'
 env:
   global:
-  - secure: sUroTncBlYcfUlW8iCU4VSwtSmelHf38mOcS1kNgyough1nlNVjE3Ob4ZfCIaegiHLwnUeFjKfyX4dSuMMryJtTJc5iuF7SCx7uZSDn0ggeZJGGPO+ck7mufPnVQ1sUQQs2suh6n+7QRM1wgpGGnKY+ciNx2b9P/AJfDB7RpnsaxExI2PxIO0c0Xq0e4YfVV1jNEot3aiwokeRzmxGne0dttM+pq1Cm6aZyhCXvcDWVK+RVNulC+ror8oOdLdAKf5nWRqhaPC+76I5wYvZgWuW5BDHsh+oknR1wf6qTa2giQUU8hJlCmIr3xShqEUJ0X8JoZjhwvcOwJgBzjHO9KSSoSvnBqFg5g7qJegNQiNgcxl/ZDaJJkZQW5yD+ZvUv+10CeZh82/0GslFakyDxDa3O+iyRxWOJqA67YVuaTutN17TDhOkpT/jffDF7bLDbGuUMcEeofcU6A/MtPBFJL1kdBHNcqUXUXyyNL2ldR6hMqN+GBCj9A3MC/LnH+xndIuMwmJ8wak0sawXSpGDeLjauEkj+DYQzIjPwckrY1g7s9Y43UB7CSxXs5HYPqpWBwwIiM5ocQVjVVdk8IWg4rIGiN76dPhOFBcrqGipPtGEWd5TwByhrQuUENEZnwG7SmJgy4eNc4meFuEMm1zeJ6RJ3d/EUueA90XR42kW3mVIM=
+    secure: OqWCtv1MKComJT3rFSmZmfAyWdNe0x92gc/P2n0CankJkPYrhU7fbvG3Zsni6pGcTjeu2A87EquBSPw0XaWyRsibmwC1Pp/s3Nrr4wkm0mpHn8dgU+mKzMd10eZ+mH6/M+iond/aRlJiB2ujItwOe1JCiUu38l8xtouinoFHdMaw2OzpYoJG+IyItAk5ZnJzXXhwl1Kb0De6T6eTlS11pC24UA8+hv61QKu1od1M7PXFcdVyX9SEzHtnmvTOoF3DlhDnwkEDORT7UsZBMAMzGUWMXO4A21MmEtEey9Hvhd0/FMROaqhx2h1S1gsuQZiKFNXUMC2GxnqQLXCiWdm2y5WfxhwH9rInMl69DJXkI/QH6ZHUSg790WJrwaBK9OQw1O2Eye4L1W7qtmRkyOpQ9E+oN4n/Z4xcHDNafpJYisaPJmLCZ45dNcOMBG7Pjf0lQnX2WbrNd//EGySrjzIkAbWuC1jHU+nUzTB2WxV8XnF9f0u4cS5abJhgCmgco9FJshIPKmN+bs55GXoRbBOQM6vtcQ71qEHat9a9IdkXOgxma8lpntmPCqrGg5BGWGi/Lo2mpUBDWv2bcLJlnFXQ7WXoE4Mp2eXTRl9OoZKXeh2Y/m4agCEtN0T1sXCWfBi9QhnGHhTx4wWB6+dWSH0Yzt5ZYWeFfAvYFZDwF3NczEw=
 before_install:
-- openssl aes-256-cbc -k $certificate_key -in songs-522b9-a83d85fea785.json.enc -out src/songs-522b9-a83d85fea785.json -d
+  - openssl aes-256-cbc -k "$certificate_key" -in certificate.json.enc -out src/songs-522b9-a83d85fea785.json -d
 install:
-- pip install -r requirements.txt
+  - pip install -r requirements.txt
 script:
-- pytest
+  - pytest
