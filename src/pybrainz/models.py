@@ -28,3 +28,34 @@ class Artist(object):
         :rtype: bool
         """
         return isinstance(self, other.__class__) and self.__dict__ == other.__dict__
+
+class Recording(object):
+    code: str
+    uid: str
+    title: str
+
+    def __init__(self, code: str, uid: str, title: str):
+        """
+        Initialise code, uid and title
+
+        :param code: identifying code
+        :type code: str
+        :param uid: id of one of the recordings with `code`
+        :type uid: str
+        :param title: display title
+        :type title: str
+        """
+        self.code = code
+        self.uid = uid
+        self.title = title
+
+    def __eq__(self, other) -> bool:
+        """
+        Override __eq__ for comparison
+
+        :param other: comparison element
+        :type other: any
+        :return: true if of same object and equal code else false
+        :rtype: bool
+        """
+        return isinstance(self, other.__class__) and self.code == other.code

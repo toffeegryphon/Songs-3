@@ -8,15 +8,10 @@ from google.cloud.firestore import Client
 
 import logging
 
-from src import FIRESTORE_CERTIFICATE, HEADERS
+from src.initialisation import db
 from src.routers import search
 
 app = FastAPI()
-
-# Init db
-cred = Certificate(FIRESTORE_CERTIFICATE)
-initialize_app(cred)
-db: Client = client()
 
 # Set routers
 app.include_router(search.router, prefix='/search')
