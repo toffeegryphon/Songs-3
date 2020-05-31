@@ -1,9 +1,11 @@
 class Artist(object):
-    uid: str
-    name: str
     """
     Artist class containing name and uid
     """
+
+    uid: str
+    name: str
+    
     def __init__(self, uid: str, name: str):
         """
         Initialise uid and name
@@ -30,6 +32,10 @@ class Artist(object):
         return isinstance(self, other.__class__) and self.__dict__ == other.__dict__
 
 class Recording(object):
+    """
+    Recordings class containing code, title and uid.
+    """
+
     code: str
     uid: str
     title: str
