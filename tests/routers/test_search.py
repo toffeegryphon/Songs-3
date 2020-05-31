@@ -25,6 +25,6 @@ class TestSearch:
         assert response.status_code == 200
         assert response.json() == [artist.__dict__ for artist in self.mocked_artists]
 
-    def test_search_blank():
+    def test_search_blank(self):
         response = client.get('/search')
         assert response.status_code == 422
