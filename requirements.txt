@@ -38,7 +38,7 @@ pytest==5.4.2
 pytest-cov==2.9.0
 pytz==2020.1
 requests==2.23.0
-rsa==4.0
+rsa==4.7
 six==1.15.0
 starlette==0.13.2
 uritemplate==3.0.1
